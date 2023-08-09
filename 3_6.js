@@ -19,6 +19,8 @@ for (key1 in updateObj) {
     }
 }
 
+/* const obj2 = { ...obj, ...updateObj }; */
+
 console.log(obj2);
 /**
  * {
