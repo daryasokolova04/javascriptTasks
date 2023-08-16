@@ -13,6 +13,6 @@ const produceBox = (produceFn) => {
 }
 
 for(let i = 0; i < 25; i++) {
-    console.log(boxFactory.produce())
-//	produceBox(boxFactory.produce);
+   // console.log(boxFactory.produce()) - без функции produceBox()
+	produceBox(boxFactory.produce.bind(boxFactory));
 }
