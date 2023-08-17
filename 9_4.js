@@ -3,20 +3,18 @@ const USERS = [
     { id: '002', name: "Иван", age: 28 },
     { id: '003', name: "Егор", age: 30 },
   ];
-  
 
-  function fetchUser(userId) {
-    let res;
-    for (let i = 0; i < USERS.length; i++) {
-        if (USERS[i].id == userId) {
-            res = USERS[i];
-        }
-    }
-    try {
-        return (res == undefined) ? err : res;
-    } catch(err) {
-        return 'no such id'
-    }
+  function fetchUser(id) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const user = USERS.find((user) => user.id === id);
+            if (user) {
+                resolve(user);
+            } else {
+                reject(new Error('no such id'));
+            }
+        }, 2500)
+    });
   }
   
   async function start() {
