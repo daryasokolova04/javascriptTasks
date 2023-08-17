@@ -16,7 +16,8 @@ const USERS = [
         }, 2500)
     });
   }
-  
+
+
   async function start() {
     // ...
     const result1 = await fetchUser('001');
